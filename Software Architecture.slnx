@@ -1,3 +1,7 @@
 <Solution>
-  <Project Path="Layered Architecture/Layered Architecture.csproj" />
+  <Project Path="Layered Architecture/API.Layer.csproj" />
+  <Project Path="LayeredArch.Application/LayeredArch.Application.csproj" />
+  <Project Path="LayeredArch.Domain/LayeredArch.Domain.csproj" />
+  <Project Path="LayeredArch.Infrastructure/LayeredArch.Infrastructure.csproj" />
+  <Project Path="LayeredArch.Tests/LayeredArch.Tests.csproj" />
 </Solution>
