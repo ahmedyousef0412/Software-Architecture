@@ -1,0 +1,31 @@
+﻿@API.Layer_HostAddress = https://localhost:7281
+
+
+## Create Order
+POST {{API.Layer_HostAddress}}/api/orders
+Content-Type: application/json
+
+{
+    "customerId":"1",
+    "items":[
+      {
+         "product": "IPhone", "quantity": 1, "price": 50000
+      }
+     
+    ]
+}
+
+###
+## Create Customer
+POST {{API.Layer_HostAddress}}/api/customers
+Content-Type: application/json
+
+{
+  "name": "Omer Yousef",
+  "email": "omeryousef@gmail.com",
+  "address": "Cairo, Egypt",
+  "phone": "01012345678"
+
+}
+
+###
