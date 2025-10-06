@@ -12,12 +12,12 @@ public class Order
 
     public Order(int customerId)
     {
-        if (customerId <=0)
+        if (customerId <= 0)
             throw new ArgumentException("Invalid Customer Id", nameof(customerId));
 
         CustomerId = customerId;
         CreatedAt = DateTime.UtcNow;
-        Status =  "Draft";
+        Status = "Draft";
         Items = [];
     }
 
