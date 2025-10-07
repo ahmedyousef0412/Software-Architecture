@@ -10,16 +10,16 @@ public class OrderRepository(ApplicationDbContext context) : IOrderRepository
 
     //Will Use UOW pattern in future
     private readonly ApplicationDbContext _context = context;
-    public async Task AddAsync(Order order)
+    public async Task AddAsync(Order order , CancellationToken cancellationToken = default)
     {
         _context.Orders.Add(order);
-        await _context.SaveChangesAsync();
+        await _context.SaveChangesAsync(cancellationToken);
     }
 
-    public async Task<Order?> GetByIdAsync(int id)
+    public async Task<Order?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
     {
         return await _context.Orders
             .Include(o => o.Items)
-            .FirstOrDefaultAsync(o => o.Id == id);
+            .FirstOrDefaultAsync(o => o.Id == id, cancellationToken);
     }
 }
