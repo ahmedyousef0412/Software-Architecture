@@ -48,25 +48,20 @@ public class CustomerRepository(ApplicationDbContext context) : ICustomerReposit
     }
     public async Task UpdateAsync(Customer customer, CancellationToken cancellationToken = default)
     {
+        ArgumentNullException.ThrowIfNull(customer);
         _context.Customers.Update(customer);
-
        await _context.SaveChangesAsync(cancellationToken);
-
-      
     }
     
     public async Task DeleteAsync(int id,CancellationToken cancellationToken = default)
     {
-        var customer = await _context.Customers.FindAsync(id,cancellationToken);
+        var customer = await _context.Customers.FindAsync(new object?[] { id, cancellationToken }, cancellationToken: cancellationToken);
 
         if (customer is not null)
         {
-
             _context.Customers.Remove(customer);
             await _context.SaveChangesAsync(cancellationToken);
         }
-
-
 
     }
 
