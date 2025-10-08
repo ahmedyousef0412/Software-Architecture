@@ -8,14 +8,14 @@ public class CreateOrderHandler(IOrderRepository orderRepository)
 
     private readonly IOrderRepository _orderRepository = orderRepository;
 
-    public async Task<int> HandleAsync(CreateOrderCommand command)
+    public async Task<int> HandleAsync(CreateOrderCommand command,CancellationToken cancellationToken = default)
     {
         var order = new Order(command.CustomerId);
 
         foreach (var item in command.Items)
             order.AddItem(item.Product, item.Quantity, item.Price);
 
-        await _orderRepository.AddAsync(order);
+        await _orderRepository.AddAsync(order,cancellationToken);
         return order.Id;
     }
 

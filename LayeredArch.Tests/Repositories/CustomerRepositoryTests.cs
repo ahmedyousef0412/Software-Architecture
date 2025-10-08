@@ -1,9 +1,8 @@
-﻿
-using LayeredArch.Domain.Entities;
+﻿using LayeredArch.Domain.Entities;
 using LayeredArch.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace LayeredArch.Tests;
+namespace LayeredArch.Tests.Repositories;
 
 public class CustomerRepositoryTests
 {

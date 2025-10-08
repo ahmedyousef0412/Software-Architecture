@@ -1,8 +1,6 @@
-﻿
+﻿using LayeredArch.Domain.Entities;
 
-using LayeredArch.Domain.Entities;
-
-namespace LayeredArch.Tests;
+namespace LayeredArch.Tests.Domains;
 
 public class OrderTests
 {
