@@ -1,10 +1,9 @@
-﻿
-using LayeredArch.Domain.Entities;
+﻿using LayeredArch.Domain.Entities;
 using LayeredArch.Infrastructure.Persistence;
 
-namespace LayeredArch.Tests;
+namespace LayeredArch.Tests.Repositories;
 
-public class OrerRepositoryTests
+public class OrderRepositoryTests
 {
 
     [Fact]
